@@ -1,4 +1,4 @@
-module github.com/soul/bkwd
+module github.com/Soul12543/bkdw
 
 go 1.21.1
 

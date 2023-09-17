@@ -8,7 +8,6 @@ import (
 
 	"golang.org/x/net/html"
 	"golang.org/x/net/html/charset"
-	//	"github.com/soul/bkdw"
 )
 
 func main() {
