@@ -1,33 +1,19 @@
-package main
+package bkdw
 
 import (
 	"fmt"
 	//	"io/ioutil"
-	"net/http"
+
 	//	"os"
 
 	"golang.org/x/net/html"
-	"golang.org/x/net/html/charset"
+
+	bkdw "github.com/Soul12543/bkdw/dw"
 )
 
 func main() {
-	url := "https://www.52bqg.org/book_128396/"
-	c := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
-	if err != nil {
-		fmt.Printf("[ERROR]:%s\n", err.Error())
-	}
-
-	resp, err := c.Do(req)
-	if err != nil {
-		fmt.Printf("[ERROR]:%s\n", err.Error())
-	}
-	defer resp.Body.Close()
-
-	body, err := charset.NewReader(resp.Body, resp.Header.Get("Content-Type"))
-	if err != nil {
-		fmt.Printf("[ERROR]:%s\n", err.Error())
-	}
+	id := "128396"
+	body, _ := bkdw.GetBookInfo(id)
 
 	doc, err := html.Parse(body)
 	if err != nil {

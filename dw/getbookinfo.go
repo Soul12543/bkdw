@@ -1,4 +1,4 @@
-package github.com/soul/bkwd
+package bkdw
 
 import (
 	"errors"
