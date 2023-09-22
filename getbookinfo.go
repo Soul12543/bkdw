@@ -21,11 +21,11 @@ func GetBookInfo(id string) (io.Reader, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer resp.Body.Close()
 
 	body, err := charset.NewReader(resp.Body, resp.Header.Get("Content-Type"))
 	if err != nil {
 		return nil, err
 	}
+	resp.Body.Close()
 	return body, nil
 }
