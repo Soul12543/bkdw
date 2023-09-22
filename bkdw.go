@@ -7,13 +7,11 @@ import (
 	//	"os"
 
 	"golang.org/x/net/html"
-
-	bkdw "github.com/Soul12543/bkdw/dw"
 )
 
 func main() {
 	id := "128396"
-	body, _ := bkdw.GetBookInfo(id)
+	body, _ := GetBookInfo(id)
 
 	doc, err := html.Parse(body)
 	if err != nil {
